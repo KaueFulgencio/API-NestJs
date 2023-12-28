@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user.entity';
 import { TodosModule } from './todos/todos.module';
+import { Todo } from './todos/entities/todo.entity';
+import path, { join } from 'path';
 
 @Module({
   imports: [
@@ -14,7 +16,8 @@ import { TodosModule } from './todos/todos.module';
       username: 'kaue',
       password: '',
       database: 'api',
-      entities: [User], 
+      //entities: [User, Todo], 
+      entities: [join(process.cwd(), 'dist/**/*.entity.js')],
       synchronize: true,
     }),
     TodosModule,

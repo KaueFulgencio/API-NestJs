@@ -1,4 +1,10 @@
-import { Entity } from "typeorm";
+import { Column, Entity, PrimaryColumn } from "typeorm";
 
 @Entity({name: 'todos' })
-export class Todo {}
+export class Todo {
+    @PrimaryColumn()
+    id: number;
+
+    @Column()
+    title: string;
+}
