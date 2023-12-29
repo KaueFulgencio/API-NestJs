@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './user.entity';
 import { TodosModule } from './todos/todos.module';
 import { Todo } from './todos/entities/todo.entity';
 import path, { join } from 'path';
@@ -16,7 +15,6 @@ import path, { join } from 'path';
       username: 'kaue',
       password: '',
       database: 'api',
-      //entities: [User, Todo], 
       entities: [join(process.cwd(), 'dist/**/*.entity.js')],
       synchronize: true,
     }),
