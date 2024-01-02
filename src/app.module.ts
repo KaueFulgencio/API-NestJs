@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { TodosModule } from './todos/todos.module';
 import { Todo } from './todos/entities/todo.entity';
 import path, { join } from 'path';
+import { UsuariosModule } from './usuarios/usuarios.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import path, { join } from 'path';
       synchronize: true,
     }),
     TodosModule,
+    UsuariosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
